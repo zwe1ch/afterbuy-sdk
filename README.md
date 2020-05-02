@@ -3,7 +3,7 @@ Installation
 
 Require the bundle and its dependencies with composer:
 
-    $ composer require zwe1ch/afterbuy-sdk/
+    $ composer require zwe1ch/afterbuy-sdk
  
 Usage
 ----------------------------------------------------------------

@@ -112,6 +112,22 @@ class Order extends AbstractOrder
     protected $vorgangsInfo;
 
     /**
+     * @Serializer\Accessor(setter="setContainseBayPlusTransaction")
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("ContainseBayPlusTransaction")
+     * @var bool
+     */
+    protected $containseBayPlusTransaction;
+
+    /**
+     * @param string $value
+     */
+    public function setContainseBayPlusTransaction($value)
+    {
+        $this->containseBayPlusTransaction = $this->setBooleanFromString($value);
+    }
+
+    /**
      * @return string
      */
     public function getEbayAccount()
@@ -221,5 +237,13 @@ class Order extends AbstractOrder
     public function getVorgangsInfo()
     {
         return $this->vorgangsInfo;
+    }
+
+    /**
+     * @return bool
+     */
+    public function containseBayPlusTransaction()
+    {
+        return $this->containseBayPlusTransaction;
     }
 }

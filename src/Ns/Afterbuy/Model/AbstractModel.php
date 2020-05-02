@@ -35,16 +35,36 @@ class AbstractModel
         return $value ? 1 : 0;
     }
 
-	/**
-	 *
-	 * @param string $name
-	 * @return mixed|null
-	 */
-	public function __get( $name ) {
-		if( property_exists( $this, $name ) ) {
-			return $this->$name;
-		}
-		return null;
-	}
+    /**
+     * @param string $value
+     *
+     * @return bool|null
+     */
+    public function setBooleanFromString($value)
+    {
+        switch ($value) {
+            case 'True';
+                return true;
+                break;
+            case 'False':
+                return false;
+                break;
+            default:
+                return null;
+        }
+    }
+
+    /**
+     *
+     * @param string $name
+     * @return mixed|null
+     */
+    public function __get($name)
+    {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+        return null;
+    }
 
 }

@@ -5,6 +5,8 @@ namespace Ns\Afterbuy\Client;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\BadResponseException;
+use Ns\Afterbuy\Model\UpdateShopProducts\UpdateShopProductsRequest;
+use Ns\Afterbuy\Model\UpdateShopProducts\UpdateShopProductsResponse;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;

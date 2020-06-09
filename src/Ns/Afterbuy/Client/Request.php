@@ -322,6 +322,21 @@ class Request implements LoggerAwareInterface
     }
 
     /**
+     * @param \Ns\Afterbuy\Model\UpdateShopProducts\Product[] $products
+     * @param int                                             $detailLevel
+     *
+     * @return AbstractResponse|UpdateShopProductsResponse
+     */
+    public function updateShopProducts(array $products, $detailLevel = AfterbuyGlobal::DETAIL_LEVEL_PROCESS_DATA)
+    {
+        $request = (new UpdateShopProductsRequest($this->afterbuyGlobal))
+            ->setDetailLevel($detailLevel)
+            ->setProducts($products);
+
+        return $this->serializeAndSubmitRequest($request, UpdateShopProductsResponse::class);
+    }
+
+    /**
      * Logs to a logger, when given
      *
      * @param string|LogLevel  $level
